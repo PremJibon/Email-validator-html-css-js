@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlite Image</title>
+</head>
+<body>
+    <div class="input-field">
+        <input type="email" name="" id="" placeholder="Enter your email">
+        <i class="uil uil-envelope email-icon"></i>
+        
+    </div>
+    
+    <script >
+        const input = document.querySelector("input"),
+        emailIcon = document.querySelector(".email-icon")
+
+        input.addEventListener("keyup",()=>{
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if(input.value === ""){
+                return console.log("input is empty")
+            }
+            if(input.value.match(pattern)){
+                emailIcon.classList.replace("uil-envelope",'uil-check-circle')
+                return emailIcon.style.color="green"
+            }
+            emailIcon.classList.replace("uil-check-circle",'uil-envelope');
+            emailIcon.style.color = "red"
+        })
+    </script>
+</body>
+</html>
